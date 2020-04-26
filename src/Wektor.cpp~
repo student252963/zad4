@@ -14,6 +14,15 @@ Wektor::Wektor() {
 }
 
 
+Wektor::Wektor(double x, double y, double z) {
+  
+  int i=0;
+  this->tab[i] = x;
+  this->tab[++i] = y;
+  this->tab[++i] = z;
+}
+
+
 Wektor::Wektor(double table[]) {
   
   for (int i=0 ; i < ROZMIAR ; i++) {

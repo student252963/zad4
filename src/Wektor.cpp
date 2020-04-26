@@ -1,25 +1,17 @@
+/***  :) i nie ma kodu
 #include "Wektor.hh"
 #include <iostream>
 #include <cmath>
 
 using namespace std;
 
-/************************************************/
+
 
 Wektor::Wektor() {
   
   for (int i=0 ; i < ROZMIAR ; i++){
     this->tab[i]=0;
   }
-}
-
-
-Wektor::Wektor(double x, double y, double z) {
-  
-  int i=0;
-  this->tab[i] = x;
-  this->tab[++i] = y;
-  this->tab[++i] = z;
 }
 
 
@@ -30,7 +22,7 @@ Wektor::Wektor(double table[]) {
   }
 }
 
-/*************************************************/
+
 
 double Wektor::dlugosc()const {
   
@@ -51,7 +43,7 @@ double Wektor::operator * (const Wektor & W2) const {
   return skalar;
 }
   
-/*************************************************/
+
 
 Wektor Wektor::operator + (const Wektor & W2) const {
 
@@ -98,7 +90,7 @@ Wektor Wektor::operator / (double l) const {
       }
 }
 
-/*************************************************/
+
 
 bool Wektor::operator == (const Wektor & W2) const {
 
@@ -115,7 +107,7 @@ bool Wektor::operator != (const Wektor & W2) const {
   return !(*this == W2);
 }
 
-/*************************************************/
+
 
 const double & Wektor::operator[] (int index) const {
     
@@ -135,7 +127,7 @@ double & Wektor::operator[] (int index) {
     else   return tab[index];
 }
 
-/************************************************/
+
 
 Wektor operator * (double l, Wektor W2) {
 
@@ -146,7 +138,7 @@ Wektor operator * (double l, Wektor W2) {
   return wIloczyn;
 }
 
-/**********************************************/
+
 
 istream& operator >> (istream &Strm, Wektor &Wek) {
 
@@ -163,3 +155,4 @@ ostream& operator << (ostream &Strm, const Wektor &Wek) {
   }
   return Strm;
 }
+***/
