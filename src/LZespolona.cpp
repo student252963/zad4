@@ -1,6 +1,6 @@
 #include <iostream>
 #include <math.h>
-#include "LZespolona.hh"
+#include "../inc/LZespolona.hh"
 
 using namespace std;
 
@@ -15,6 +15,25 @@ using namespace std;
  *    Sume dwoch skladnikow przekazanych jako parametry.
  */
 
+LZespolona::LZespolona() {
+  
+  re=0;
+  im=0;
+}
+
+LZespolona::LZespolona(double r, double i) {
+
+  re=r;
+  im=i;
+}
+
+
+LZespolona & LZespolona::operator = (double l) {
+
+  this->re = l;
+  this->im = 0;
+  return *this;
+}
 
 
 LZespolona  operator + (LZespolona  Skl1,  LZespolona  Skl2)
@@ -44,23 +63,45 @@ LZespolona  operator * (LZespolona  Skl1,  LZespolona  Skl2)
   return Wynik;
 }
 
+LZespolona  operator * (LZespolona  Skl1,  double  l) {
+
+  LZespolona Wynik;
+
+  Wynik.re = Skl1.re * l;
+  Wynik.im = Skl1.im * l;
+  return Wynik;
+}
+  
+
 LZespolona  operator / (LZespolona  Skl1,  LZespolona  Skl2)
 {
   LZespolona  Wynik;
   double h = Skl2.re * Skl2.re + Skl2.im * Skl2.im; //zdefiniowana pomocnicz do rownan nizej
-  
+
+  if(h!=0) {
   Wynik.re = (Skl1.re * Skl2.re + Skl1.im * Skl2.im) / h;
   Wynik.im = (Skl2.re * Skl1.im - Skl1.re * Skl2.im) / h;
   return Wynik;
+  }
+  else {
+    cerr << "Nie można wykonać operacji dzielenia. Dzielenie przez zero!";
+    exit(1);
+  }
 }
 
+LZespolona  operator / (LZespolona  Skl1,  double  l) {
 
-LZespolona utworz(double re, double im){
-  LZespolona Stworzona; //deklarujemy liczbe zespolona i nizej ja tworzymy
-  
-  Stworzona.re = re;
-  Stworzona.im = im;
-  return Stworzona;
+  LZespolona Wynik;
+
+  if (l!=0) {
+    Wynik.re = Skl1.re / l;
+    Wynik.im = Skl1.im /l;
+    return Wynik;
+  }
+  else {
+    cerr << "Nie można wykonać operacji dzielenia. Dzielenie przez zero!";
+    exit(1);
+  }
 }
 
 
@@ -95,11 +136,24 @@ bool operator == (LZespolona  Skl1,  LZespolona  Skl2) //porownuje czesci urojon
   else   return false;
 }
 
+bool operator == (LZespolona  Skl1,  double  l) {
+
+  if( (Skl1.re==l) && (Skl1.im==0) )
+    return true;
+  else return false;
+}
+
 
 bool operator != (LZespolona  Skl1,  LZespolona  Skl2)
 {
-  if ( (Skl1.re==Skl2.re) && (Skl1.im==Skl2.im) )
+  if (Skl1==Skl2)
     return false;
   else   return true;
+}
+
+bool operator != (LZespolona  Skl1,  double  l) {
+  if (Skl1==l)
+    return false;
+  else return true;
 }
   

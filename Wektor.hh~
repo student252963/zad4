@@ -5,7 +5,6 @@
 #include <iostream>
 #include <cmath>
 
-using namespace std;
 
 
 template<typename Typ, int ROZMIAR>
@@ -44,10 +43,9 @@ public:
   
   Typ operator * (const Wektor<Typ, ROZMIAR> & W2) const {
   
-    Typ skalar;
-    skalar = 0;
+    Typ skalar=0;
     for(int i=0 ; i < ROZMIAR ; i++) {
-      skalar = skalar + (this->tab[i] * W2[i]);
+      skalar += this->tab[i] * W2[i];
     }
     return skalar;
   }  
@@ -152,7 +150,7 @@ Wektor<Typ, ROZMIAR> operator * (Typ l, Wektor<Typ, ROZMIAR> W2) {
 
 
 template<class Typ , int ROZMIAR>
-istream& operator >> (istream &Strm, Wektor<Typ, ROZMIAR> &Wek) {
+std::istream& operator >> (std::istream &Strm, Wektor<Typ, ROZMIAR> &Wek) {
 
   for(int i=0 ; i < ROZMIAR ; i++) {
     Strm >> Wek[i];
@@ -162,7 +160,7 @@ istream& operator >> (istream &Strm, Wektor<Typ, ROZMIAR> &Wek) {
 
 
 template<class Typ , int ROZMIAR>
-ostream& operator << (ostream &Strm, const Wektor<Typ, ROZMIAR> &Wek) {
+std::ostream& operator << (std::ostream &Strm, const Wektor<Typ, ROZMIAR> &Wek) {
 
   for(int i=0 ; i < ROZMIAR ; i++) {
     Strm << Wek[i] << " ";
