@@ -18,7 +18,7 @@ public:
   MacierzKw() {
     
     for(int i=0 ; i < ROZMIAR ; i++) {
-      this->tab[i] = Wektor();
+      this->tab[i] = Wektor<Typ , ROZMIAR>();
     }
   }
 
@@ -30,7 +30,6 @@ public:
     }
   }
   
-  // MacierzKw(Wektor A, Wektor B, Wektor C);
   /*******************************************/
   
   Typ wyznacznik() const {

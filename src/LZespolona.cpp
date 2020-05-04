@@ -78,7 +78,7 @@ LZespolona  operator / (LZespolona  Skl1,  LZespolona  Skl2)
   LZespolona  Wynik;
   double h = Skl2.re * Skl2.re + Skl2.im * Skl2.im; //zdefiniowana pomocnicz do rownan nizej
 
-  if(h!=0) {
+    if(h!=0) {
   Wynik.re = (Skl1.re * Skl2.re + Skl1.im * Skl2.im) / h;
   Wynik.im = (Skl2.re * Skl1.im - Skl1.re * Skl2.im) / h;
   return Wynik;
@@ -93,16 +93,16 @@ LZespolona  operator / (LZespolona  Skl1,  double  l) {
 
   LZespolona Wynik;
 
-  if (l!=0) {
+   if (l!=0) {
     Wynik.re = Skl1.re / l;
     Wynik.im = Skl1.im /l;
     return Wynik;
-  }
-  else {
-    cerr << "Nie można wykonać operacji dzielenia. Dzielenie przez zero!";
-    exit(1);
-  }
-}
+     }
+     else {
+       cerr << "Nie można wykonać operacji dzielenia. Dzielenie przez zero!";
+      exit(1);
+      }
+    }
 
 
 istream & operator >> (istream & strm, LZespolona &Z1) //w przypadku bledu wczytanych liczb da informacje o bledzie i w mainie pojdzie informacja o niepoprawnosci zapisu

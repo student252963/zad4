@@ -1,9 +1,9 @@
 #ifndef WEKTOR_HH
 #define WEKTOR_HH
 
-#include "LZespolona.hh"
+#include "../inc/LZespolona.hh"
 #include <iostream>
-#include <cmath>
+#include <math.h>
 
 using namespace std;
 
@@ -31,14 +31,14 @@ public:
   }
   /**************************************/
   
-  double dlugosc() const {
+  /*  double dlugosc() const {
   
-    double modul=0;
+    double modul;
     for (int i=0 ; i <ROZMIAR ; i++) {
-      modul += pow(this->tab[i],2);
+      modul = modul + this->tab[i] * this->tab[i];
     }
     return sqrt(modul);
-  }
+    } */
 
   /*************************************/
   

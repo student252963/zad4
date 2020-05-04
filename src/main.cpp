@@ -14,7 +14,7 @@ int main()
   cout << endl << " Start programu " << endl << endl;
 
   fstream plik;
-  plik.open("dane.dat" , ios::in);
+  plik.open("daneZ.dat" , ios::in);
   if(plik.good()==false) {
     cout << "Nie znaleziono pliku :<"<<endl;
     return 0;
@@ -55,9 +55,9 @@ int main()
   cout << "Wektor bledu:" << endl
        << "Ax-b = " << "( " << Blad << ')' << endl
        << endl;
-  cout << "Dlugosc wektora bledu:" << endl
+  /* cout << "Dlugosc wektora bledu:" << endl
        << "||Ax-b|| = " << Blad.dlugosc() << endl
-       << endl;
+       << endl; */
     }
   else if(typ=='z') {
     
@@ -91,17 +91,15 @@ int main()
   cout << "Wektor bledu:" << endl
        << "Ax-b = " << "( " << Blad << ')' << endl
        << endl;
-  cout << "Dlugosc wektora bledu:" << endl
+  /*  cout << "Dlugosc wektora bledu:" << endl
        << "||Ax-b|| = " << Blad.dlugosc() << endl
-       << endl;
+       << endl; */
   }
   else {
     cerr << "Dane nie zawierają prawidłowej informacji o ich typie :( " << endl;
     exit(1);
   }
-}
     
-
 
 
 
