@@ -45,7 +45,7 @@ int main()
   cout << Wynik <<endl
        << endl;
 
-  //MacierzKw Mc;
+  //MacierzKw<double,5> Mc;
   //cout<<"Macierz A:"<<endl;
   //Mc = (UklRown.get_A()).transponuj();
   //cout<<Mc<<endl;
@@ -55,9 +55,6 @@ int main()
   cout << "Wektor bledu:" << endl
        << "Ax-b = " << "( " << Blad << ')' << endl
        << endl;
-  /* cout << "Dlugosc wektora bledu:" << endl
-       << "||Ax-b|| = " << Blad.dlugosc() << endl
-       << endl; */
     }
   else if(typ=='z') {
     
@@ -81,7 +78,7 @@ int main()
   cout << Wynik <<endl
        << endl;
 
-  //MacierzKw Mc;
+  //MacierzKw<LZespolona,5> Mc;
   //cout<<"Macierz A:"<<endl;
   //Mc = (UklRown.get_A()).transponuj();
   //cout<<Mc<<endl;
@@ -90,10 +87,7 @@ int main()
 
   cout << "Wektor bledu:" << endl
        << "Ax-b = " << "( " << Blad << ')' << endl
-       << endl;
-  /*  cout << "Dlugosc wektora bledu:" << endl
-       << "||Ax-b|| = " << Blad.dlugosc() << endl
-       << endl; */
+       << endl; 
   }
   else {
     cerr << "Dane nie zawierają prawidłowej informacji o ich typie :( " << endl;

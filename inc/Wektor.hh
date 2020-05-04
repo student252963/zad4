@@ -31,14 +31,15 @@ public:
   }
   /**************************************/
   
-  /*  double dlugosc() const {
+    double dlugosc() const {
   
     double modul;
+    modul = 0;
     for (int i=0 ; i <ROZMIAR ; i++) {
       modul = modul + this->tab[i] * this->tab[i];
     }
     return sqrt(modul);
-    } */
+    } 
 
   /*************************************/
   
